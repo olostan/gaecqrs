@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+  
+  <!-- Servlets -->
+  <servlet>
+    <servlet-name>greetServlet</servlet-name>
+    <servlet-class>com.olostan.gaecqrs.server.GreetingServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>greetServlet</servlet-name>
+    <url-pattern>/gaecqrs/greet</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>Gaecqrs.html</welcome-file>
+  </welcome-file-list>
+  <servlet>
+  	<servlet-name>QueryService</servlet-name>
+  	<servlet-class>com.olostan.gaecqrs.server.QueryServiceImpl</servlet-class>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>QueryService</servlet-name>
+  	<url-pattern>/gaecqrs/QueryService</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>CommandService</servlet-name>
+  	<servlet-class>com.olostan.gaecqrs.server.CommandServiceImpl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>CommandService</servlet-name>
+  	<url-pattern>/gaecqrs/CommandService</url-pattern>
+  </servlet-mapping>
+
+</web-app>
